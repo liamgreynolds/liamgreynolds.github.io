@@ -7,7 +7,7 @@
   --line: #e3e3e3;
   --accent: #2f4b3f;
   --max: 1200px;
-  --font: "Futura PT", "Futura", Futura, Jost, "Century Gothic", "Trebuchet MS", sans-serif;
+  --font: Futura, "Futura PT", Jost, "Century Gothic", "Trebuchet MS", sans-serif;
 }
 
 * { box-sizing: border-box; }
