@@ -154,6 +154,15 @@ a { color: var(--accent); }
 }
 
 /* 30 Day Map Challenge */
+.challenge-cover { margin: 2rem 0 0; }
+.challenge-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: zoom-in;
+}
 .day-grid {
   grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 1.25rem;
