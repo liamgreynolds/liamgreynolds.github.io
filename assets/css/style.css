@@ -332,7 +332,7 @@ a { color: var(--accent); }
 }
 
 /* Futura refinements */
-strong, b { font-weight: 500; }
-.site-header nav a { font-weight: 400; }
-.btn { font-weight: 400; letter-spacing: 0.02em; }
+strong, b { font-weight: 400; }
+.site-header nav a { font-weight: 300; }
+.btn { font-weight: 300; letter-spacing: 0.02em; }
 h1, h2, h3 { letter-spacing: 0.015em; }
