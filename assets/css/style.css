@@ -1,0 +1,287 @@
+/* Liam Reynolds — portfolio
+   Clean, minimal, white background, generous whitespace. No frameworks. */
+
+:root {
+  --text: #1c1c1c;
+  --muted: #666;
+  --line: #e3e3e3;
+  --accent: #2f4b3f;
+  --max: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--accent); }
+
+/* Header / nav */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+}
+.wordmark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.site-header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-header nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.98rem;
+}
+.site-header nav a:hover { text-decoration: underline; }
+.site-header nav a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+/* Banner */
+.banner {
+  position: relative;
+  height: 42vh;
+  min-height: 260px;
+  overflow: hidden;
+}
+.banner-thin { height: 30vh; min-height: 200px; }
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.banner-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+.banner-text h1 {
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  margin: 0;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+.banner-text p {
+  color: #fff;
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+  margin: 0.4rem 0 0;
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Sections */
+.section {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.section h1 { font-size: 2.2rem; margin: 0 0 1rem; }
+.section h2 { font-size: 1.6rem; margin: 2rem 0 0.8rem; }
+.section .intro { font-size: 1.12rem; max-width: 46rem; }
+.about-photo {
+  float: right;
+  width: min(340px, 45%);
+  margin: 0 0 1rem 2rem;
+  border-radius: 4px;
+}
+.about::after { content: ""; display: block; clear: both; }
+
+/* Project grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.card {
+  text-decoration: none;
+  color: var(--text);
+}
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover img {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+.card-title {
+  display: block;
+  margin-top: 0.7rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.12rem;
+}
+
+/* Feature block (spatial analysis) */
+.feature { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+.feature h2 a { color: var(--text); text-decoration: none; }
+.feature h2 a:hover { text-decoration: underline; }
+
+/* Project pages */
+.project-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+.project-img { width: 100%; border: 1px solid var(--line); border-radius: 4px; cursor: zoom-in; }
+.project-text h1 { margin-top: 0; }
+.project-text-wide { max-width: 46rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.btn:hover { opacity: 0.88; }
+.project-extra {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.project-extra figure { margin: 0; }
+.project-extra img { width: 100%; border: 1px solid var(--line); border-radius: 4px; cursor: zoom-in; }
+.project-extra figcaption { margin-top: 0.5rem; color: var(--muted); font-size: 0.95rem; }
+.fullmap { margin-top: 2.5rem; }
+.fullmap img { width: 100%; border: 1px solid var(--line); border-radius: 4px; }
+
+/* Slideshow (Vermont pamphlet) */
+.slideshow { position: relative; }
+.slideshow .slide { display: none; width: 100%; border: 1px solid var(--line); border-radius: 4px; }
+.slideshow .slide.active { display: block; }
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.6rem;
+  height: 2.6rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--text);
+}
+.slide-btn.prev { left: 0.7rem; }
+.slide-btn.next { right: 0.7rem; }
+.slide-count {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 0.9rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.9rem;
+}
+
+/* Photography gallery */
+.gallery { display: flex; flex-direction: column; gap: 0.6rem; }
+.gallery .photo { width: 100%; cursor: zoom-in; }
+
+/* Resume */
+.resume h1 { margin-bottom: 0.2rem; }
+.resume .contact { color: var(--muted); margin-top: 0; }
+.resume h2 {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.35rem;
+  margin-top: 2.4rem;
+}
+.resume .entry-title { font-size: 1.08rem; margin: 1.3rem 0 0.1rem; }
+.resume .entry-meta { color: var(--muted); margin: 0 0 0.4rem; font-size: 0.95rem; }
+.resume ul { margin: 0.3rem 0 1rem; padding-left: 1.3rem; }
+.resume li { margin: 0.25rem 0; }
+.resume-download { margin-top: 2.2rem; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+  padding: 1.4rem 1.5rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 2rem;
+}
+.lightbox[hidden] { display: none; }
+.lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.lightbox-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .project-layout { grid-template-columns: 1fr; }
+  .about-photo { float: none; width: 100%; margin: 0 0 1rem; }
+  .card img { height: 240px; }
+  .site-header { justify-content: center; text-align: center; }
+  .site-header nav ul { justify-content: center; }
+}
