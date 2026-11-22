@@ -153,6 +153,46 @@ a { color: var(--accent); }
   font-size: 1.12rem;
 }
 
+/* 30 Day Map Challenge */
+.day-grid {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 1.25rem;
+}
+.day-tile {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  color: var(--text);
+}
+.day-tile .day-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.day-tile .day-num {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+}
+.day-tile.filled {
+  border: none;
+  aspect-ratio: auto;
+  display: block;
+}
+.day-tile.filled img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  cursor: zoom-in;
+}
+
 /* Feature block (spatial analysis) */
 .feature { margin-top: 3rem; border-top: 1px solid var(--line); padding-top: 1rem; }
 .feature h2 a { color: var(--text); text-decoration: none; }
