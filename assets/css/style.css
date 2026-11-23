@@ -199,6 +199,7 @@ a { color: var(--accent); }
   align-items: start;
 }
 .project-img { width: 100%; border: 1px solid var(--line); border-radius: 4px; cursor: zoom-in; }
+.zoomable { cursor: zoom-in; }
 .project-text h1 { margin-top: 0; }
 .project-text-wide { max-width: 46rem; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.6rem; }

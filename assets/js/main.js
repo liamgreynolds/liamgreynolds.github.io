@@ -1,10 +1,13 @@
 // Liam Reynolds — portfolio: lightbox, full-map toggle, pamphlet slideshow.
 (function () {
-  // Lightbox: click any .zoomable image to view it full-screen.
+  // Lightbox: click any image to view it full-screen. Images inside links
+  // (project grid cards) are skipped so they keep navigating instead.
   var box = document.getElementById('lightbox');
   var boxImg = document.getElementById('lightbox-img');
   if (box && boxImg) {
-    document.querySelectorAll('.zoomable').forEach(function (img) {
+    document.querySelectorAll('img').forEach(function (img) {
+      if (img.id === 'lightbox-img' || img.closest('a')) return;
+      img.classList.add('zoomable');
       img.addEventListener('click', function () {
         boxImg.src = img.currentSrc || img.src;
         boxImg.alt = img.alt || '';
